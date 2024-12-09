@@ -27,5 +27,14 @@ describe("Incubyte TDD Assesment", () => {
         expect(calculator.calculate("//|\n1|2|3")).toBe(6);
     });
 
-  
+    test("should throw an error for negative numbers when negative numbers are disallowed", () => {
+        expect(() => calculator.calculate("1,-2,-3")).toThrow(
+            "Negative numbers not allowed: -2, -3"
+        );
+    });
+
+    test("should return the sum of negative values also if negative numbers are allowed", () => {
+        const calc = new Calculator({ operation: "add", allowNegative: true })
+        expect(calc.calculate("2,4,-2")).toBe(4);
+    });
 })
