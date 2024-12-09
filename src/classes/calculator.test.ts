@@ -57,5 +57,14 @@ describe("Incubyte TDD Assesment", () => {
         expect(calculator.calculate("//*^\n1*^2*^3")).toBe(6);
     });
 
-    
+    test("should ignore non mumeric values and return the result", () => {
+        expect(calculator.calculate("a,b,c")).toBe(0);
+        expect(calculator.calculate("1,2,a,b,c,3")).toBe(6);
+    });
+
+    test("should handle space as delimiter", () => {
+        expect(calculator.calculate("// \n2 2 3")).toBe(7);
+    });
+
+
 })
