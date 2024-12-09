@@ -23,16 +23,18 @@ export class Calculator {
 
         if (!values) return 0;
 
-        const  numbers  = this.parseValues(values);
+        const numbers = this.parseValues(values);
 
         if (numbers.length === 1) return numbers[0];
+        else
+            return numbers.reduce((sum, num) => sum + num, 0);
 
-        
+
 
         return 0
     }
 
-    private parseValues(value: string):  number[]  {
+    private parseValues(value: string): number[] {
         let delimiter = /,|\n/;
         let numberString = value;
 
