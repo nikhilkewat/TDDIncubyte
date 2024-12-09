@@ -29,7 +29,7 @@ export class Calculator {
         else
             return numbers.reduce((sum, num) => sum + num, 0);
 
-
+        
 
         return 0
     }

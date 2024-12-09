@@ -21,4 +21,11 @@ describe("Incubyte TDD Assesment", () => {
         expect(calculator.calculate("1\n3")).toBe(4);
     });
 
+    test("should handle custom delimiters", () => {
+        expect(calculator.calculate("//-\n1-2-3")).toBe(6);
+        expect(calculator.calculate("//;\n1;2;3")).toBe(6);
+        expect(calculator.calculate("//|\n1|2|3")).toBe(6);
+    });
+
+  
 })
