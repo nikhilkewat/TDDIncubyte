@@ -37,4 +37,14 @@ describe("Incubyte TDD Assesment", () => {
         const calc = new Calculator({ operation: "add", allowNegative: true })
         expect(calc.calculate("2,4,-2")).toBe(4);
     });
+
+    test("should handle multiple numbers", () => {
+        expect(calculator.calculate("1,2,3,4,5,20,10,100,50")).toBe(195);
+    });
+
+    test("should handle multiple delimiters", () => {
+        expect(calculator.calculate("1,2\n3\n4\n1,1")).toBe(12);
+    });
+
+
 })
