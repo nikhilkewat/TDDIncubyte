@@ -46,5 +46,16 @@ describe("Incubyte TDD Assesment", () => {
         expect(calculator.calculate("1,2\n3\n4\n1,1")).toBe(12);
     });
 
+    test("should handle special delimiters", () => {
+        expect(calculator.calculate("//$\n1$2$3")).toBe(6);
+    });
+    test("should handle multiple custom delimiters", () => {
+        expect(calculator.calculate("//$-\n1$2-3")).toBe(6);
+    });
 
+    test("should support multi-character custom delimiters", () => {
+        expect(calculator.calculate("//*^\n1*^2*^3")).toBe(6);
+    });
+
+    
 })
